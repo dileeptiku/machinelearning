@@ -11801,7 +11801,7 @@ This is a classification type of learning problem, because the label to be predi
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -11853,14 +11853,14 @@ This is a classification type of learning problem, because the label to be predi
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
 <span class="n">n_students</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">student_data</span><span class="p">)</span>
 
 <span class="c1"># TODO: Calculate number of features</span>
-<span class="n">n_features</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">student_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">n_features</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">student_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> 
 
 <span class="c1"># TODO: Calculate passing students</span>
 <span class="n">n_passed</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">student_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">student_data</span><span class="p">[</span><span class="s2">&quot;passed&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span><span class="p">)])</span>
@@ -11869,7 +11869,7 @@ This is a classification type of learning problem, because the label to be predi
 <span class="n">n_failed</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">student_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">student_data</span><span class="p">[</span><span class="s2">&quot;passed&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;no&quot;</span><span class="p">)])</span>
 
 <span class="c1"># TODO: Calculate graduation rate</span>
-<span class="n">grad_rate</span> <span class="o">=</span> <span class="n">n_failed</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">n_students</span>
+<span class="n">grad_rate</span> <span class="o">=</span> <span class="n">n_passed</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">n_students</span>
 
 <span class="c1"># Print the results</span>
 <span class="k">print</span> <span class="s2">&quot;Total number of students: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_students</span><span class="p">)</span>
@@ -11890,10 +11890,10 @@ This is a classification type of learning problem, because the label to be predi
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Total number of students: 395
-Number of features: 31
+Number of features: 30
 Number of students who passed: 265
 Number of students who failed: 130
-Graduation rate of the class: 32.00%
+Graduation rate of the class: 67.00%
 </pre>
 </div>
 </div>
@@ -11916,7 +11916,7 @@ Graduation rate of the class: 32.00%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -11998,7 +11998,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -12090,7 +12090,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -12208,7 +12208,7 @@ Naive Bayes is relatively simple to understand, can be easily trained irrespecti
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -12281,7 +12281,7 @@ Naive Bayes is relatively simple to understand, can be easily trained irrespecti
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -12294,19 +12294,19 @@ Naive Bayes is relatively simple to understand, can be easily trained irrespecti
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 
 <span class="c1"># TODO: Initialize the three models</span>
-<span class="n">clf_A</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
-<span class="n">clf_B</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="n">clf_C</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+<span class="n">clf_A</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">clf_B</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">clf_C</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="c1"># TODO: Set up the training set sizes</span>
-<span class="n">X_train_100</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">y_train_100</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">X_train_100</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
+<span class="n">y_train_100</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
 
-<span class="n">X_train_200</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="n">y_train_200</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">X_train_200</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[:</span><span class="mi">200</span><span class="p">]</span>
+<span class="n">y_train_200</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[:</span><span class="mi">200</span><span class="p">]</span>
 
-<span class="n">X_train_300</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
-<span class="n">y_train_300</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">X_train_300</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[:</span><span class="mi">300</span><span class="p">]</span>
+<span class="n">y_train_300</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[:</span><span class="mi">300</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="p">[</span><span class="n">clf_A</span><span class="p">,</span><span class="n">clf_B</span><span class="p">,</span><span class="n">clf_C</span><span class="p">]:</span>
     <span class="k">for</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span> <span class="p">]:</span>
@@ -12329,56 +12329,56 @@ Naive Bayes is relatively simple to understand, can be easily trained irrespecti
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training a DecisionTreeClassifier using a training set size of 100. . .
-Trained model in 0.0090 seconds
-Made predictions in 0.0030 seconds.
+Trained model in 0.0030 seconds
+Made predictions in 0.0010 seconds.
 F1 score for training set: 1.0000.
-Made predictions in 0.0020 seconds.
-F1 score for test set: 0.6325.
+Made predictions in 0.0000 seconds.
+F1 score for test set: 0.6441.
 Training a DecisionTreeClassifier using a training set size of 200. . .
-Trained model in 0.0050 seconds
+Trained model in 0.0020 seconds
 Made predictions in 0.0010 seconds.
 F1 score for training set: 1.0000.
-Made predictions in 0.0010 seconds.
-F1 score for test set: 0.7794.
+Made predictions in 0.0000 seconds.
+F1 score for test set: 0.7481.
 Training a DecisionTreeClassifier using a training set size of 300. . .
-Trained model in 0.0040 seconds
-Made predictions in 0.0000 seconds.
+Trained model in 0.0080 seconds
+Made predictions in 0.0010 seconds.
 F1 score for training set: 1.0000.
-Made predictions in 0.0000 seconds.
-F1 score for test set: 0.6829.
+Made predictions in 0.0010 seconds.
+F1 score for test set: 0.6935.
 Training a GaussianNB using a training set size of 100. . .
 Trained model in 0.0010 seconds
-Made predictions in 0.0000 seconds.
+Made predictions in 0.0010 seconds.
 F1 score for training set: 0.8346.
-Made predictions in 0.0000 seconds.
+Made predictions in 0.0010 seconds.
 F1 score for test set: 0.7402.
 Training a GaussianNB using a training set size of 200. . .
-Trained model in 0.0010 seconds
-Made predictions in 0.0000 seconds.
+Trained model in 0.0020 seconds
+Made predictions in 0.0010 seconds.
 F1 score for training set: 0.7879.
 Made predictions in 0.0000 seconds.
 F1 score for test set: 0.6446.
 Training a GaussianNB using a training set size of 300. . .
-Trained model in 0.0010 seconds
-Made predictions in 0.0010 seconds.
-F1 score for training set: 0.7921.
+Trained model in 0.0020 seconds
 Made predictions in 0.0000 seconds.
+F1 score for training set: 0.7921.
+Made predictions in 0.0010 seconds.
 F1 score for test set: 0.6720.
 Training a SVC using a training set size of 100. . .
-Trained model in 0.0010 seconds
+Trained model in 0.0020 seconds
 Made predictions in 0.0010 seconds.
 F1 score for training set: 0.8591.
-Made predictions in 0.0010 seconds.
+Made predictions in 0.0000 seconds.
 F1 score for test set: 0.8333.
 Training a SVC using a training set size of 200. . .
-Trained model in 0.0030 seconds
-Made predictions in 0.0040 seconds.
+Trained model in 0.0050 seconds
+Made predictions in 0.0030 seconds.
 F1 score for training set: 0.8581.
-Made predictions in 0.0020 seconds.
+Made predictions in 0.0010 seconds.
 F1 score for test set: 0.8408.
 Training a SVC using a training set size of 300. . .
 Trained model in 0.0080 seconds
-Made predictions in 0.0060 seconds.
+Made predictions in 0.0050 seconds.
 F1 score for training set: 0.8584.
 Made predictions in 0.0020 seconds.
 F1 score for test set: 0.8462.
@@ -12559,7 +12559,9 @@ The results from various experiments with the three classifiers I chose, reveal 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>The model I chose is based on Support Vector Machine classifier.  Support Vector Machine classifier attempts to classify data placing a data point on one side of a dividing line.  Data points close to the dividing line are called support vectors.  The class label of an unseen data point in Support Vector Machine will depend upon the side of the line the data point falls on.  The further a data point is from the line the higher is the confidence that the data point has been classified accurately. In real world the data points are not necessarily separable by a line, which is when the Support Vector Machine tries to separate the data points by adding another dimension to the model and divide the data points by a hyperplane.  During training the support vector machine model determines a hyperplane in such a way that the distance between the nearest datapoints  and hyperplane is maximum on each side.</p>
+<p>The model I chose is based on Support Vector Machine classifier.  Support Vector Machine classifier attempts to classify data placing a data point on one side of a dividing line.  Data points close to the dividing line are called support vectors.  The class label of an unseen data point in Support Vector Machine will depend upon the side of the line the data point falls on.  The further a data point is from the line the higher is the confidence that the data point has been classified accurately. In real world the data points are not necessarily separable by a line, which is when the Support Vector Machine tries to separate the data points by adding another dimension to the model and divide the data points by a hyperplane.  During training the support vector machine model determines a hyperplane in such a way that the distance between the nearest datapoints  and hyperplane is maximum on each side.  Support Vector Machines use what is known as "Kernel Trick" by utilizing a kernel function to implicitly compute values based on the data points for separating them with a hyperplane in a higher dimension.</p>
+<p>The below diagram (reference: <a href="http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html">http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html</a>) visually shows how data points which are not separable in two di)mensions can easily be separated in three dimension, which is what the kernel functions with SVM help do.</p>
+<p><img src="data_2d_to_3d.png" alt="title"></p>
 <p>Support Vector Machine is suitable when the training data set is smaller because larger number of training points require more time to train in this model.  SVM classifiers are highly accurate and work well with a data set which has fewer outliers.</p>
 
 </div>
@@ -12591,7 +12593,7 @@ The results from various experiments with the three classifiers I chose, reveal 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span>
@@ -12600,7 +12602,7 @@ The results from various experiments with the three classifiers I chose, reveal 
 <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;C&quot;</span><span class="p">:[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span><span class="s2">&quot;kernel&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;rbf&#39;</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;poly&#39;</span><span class="p">,</span> <span class="s1">&#39;sigmoid&#39;</span><span class="p">],</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">]}</span>
 
 <span class="c1"># TODO: Initialize the classifier</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1"># TODO: Make an f1 scoring function using &#39;make_scorer&#39; </span>
 <span class="n">f1_scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">f1_score</span><span class="p">,</span> <span class="n">pos_label</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span><span class="p">)</span>
@@ -12630,7 +12632,7 @@ The results from various experiments with the three classifiers I chose, reveal 
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Made predictions in 0.0070 seconds.
+<pre>Made predictions in 0.0060 seconds.
 Tuned model has a training F1 score of 0.9754.
 Made predictions in 0.0020 seconds.
 Tuned model has a testing F1 score of 0.8481.

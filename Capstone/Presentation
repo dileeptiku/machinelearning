@@ -1,0 +1,30 @@
+**Slide 1: Project Overview**  
+**Capstone Project - API Analysis: Behavioral Malware Detection Using Machine Learning**  
+- **By:** Dileep Tiku  
+- **Program:** Machine Learning Engineer Nanodegree (June 11, 2016)  
+- **Problem Statement:** Develop a behavior analysis model to classify API call sequences as malicious or benign to identify bad actors.  
+- **Dataset:** CSMining dataset with 388 software traces (320 malware, 68 benign).  
+- **Motivation:** Traditional signature-based malware detection has limitations. Machine learning can enhance API analysis by examining behavioral patterns in API calls.  
+  
+**Slide 2: Approach & Algorithm Choices**  
+**Feature Extraction:**  
+- **CountVectorizer:** Converts API call sequences into numerical vectors using the Bag-of-Words model.  
+- **TF-IDF Transformer:** Reduces the importance of common API calls across malicious and benign sequences.  
+  
+**Classification Algorithm:**  
+- **Chosen Model:** Support Vector Machine (SVM) with Stochastic Gradient Descent (SGD).  
+- **Reasoning:**  
+  - SVM performs well for sequence-based classification problems.  
+  - SGD optimization efficiently handles large-scale API call sequences.  
+  - Linear separability assumption holds for textual API call data.  
+  
+**Slide 3: Results & Conclusion**  
+- **Benchmark:** MultiNomial Naïve Bayes (84.6% accuracy).  
+- **Final Model Performance:** SVM with SGD achieved **89.7% accuracy**.  
+- **Evaluation Metrics:** Precision, Recall, F1-score, and Accuracy.  
+- **Next Steps:**  
+  - Expand behavioral analysis to detect API call anomalies indicating malicious intent.  
+  - Integrate network-based behavioral analysis (outbound calls to blacklisted URLs).  
+  - Extend classification to differentiate attack patterns (data exfiltration, unauthorized access, API abuse).  
+- **Key Takeaway:** Behavioral API analysis using machine learning is a powerful approach for enhancing API analysis and detecting bad actors.
+
